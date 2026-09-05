@@ -1,0 +1,43 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--brand-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: var(--brand-white);
+  opacity: 1;
+  transition: opacity 0.6s var(--ease);
+}
+
+.preloader.is-fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader__count {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(48px, 12vw, 120px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.preloader__bar {
+  display: block;
+  width: min(240px, 55vw);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.preloader__bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--brand-white);
+  transition: width 0.3s var(--ease);
+}

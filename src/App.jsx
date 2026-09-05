@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useLenis } from "./hooks/useLenis";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
 import Landing from "./pages/Landing";
 import WorksPage from "./pages/WorksPage";
 import AboutPage from "./pages/AboutPage";
@@ -14,6 +15,7 @@ export default function App() {
 
   return (
     <>
+      <Preloader />
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />

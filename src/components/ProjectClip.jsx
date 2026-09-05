@@ -68,6 +68,14 @@ export default function ProjectClip({ clip }) {
     }
   }
 
+  function restart() {
+    const el = ref.current;
+    if (!el) return;
+    el.currentTime = 0;
+    el.play?.().catch(() => {});
+    setPlaying(true);
+  }
+
   return (
     <div className="clip" style={{ aspectRatio: `${w} / ${h}` }}>
       <video
@@ -82,6 +90,24 @@ export default function ProjectClip({ clip }) {
       />
 
       <div className="clip__controls">
+        <button
+          type="button"
+          className="clip__btn"
+          onClick={restart}
+          aria-label="Start video over"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+
         <button
           type="button"
           className="clip__btn"
