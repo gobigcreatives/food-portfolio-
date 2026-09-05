@@ -92,13 +92,12 @@
 .about__statement {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(13px, 1.2vw, 15px);
-  line-height: 1.5;
+  font-size: clamp(14px, 1.3vw, 17px);
+  line-height: 1.6;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.01em;
   color: var(--brand-blue);
-  max-width: 460px;
+  max-width: 520px;
   margin: 160px auto 0;
 }
 
