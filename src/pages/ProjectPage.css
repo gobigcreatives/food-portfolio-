@@ -100,7 +100,15 @@
 }
 
 @media (max-width: 540px) {
+  .project {
+    padding: 100px 14px 70px;
+  }
   .project__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  /* a lone wide (landscape) clip stays full width */
+  .project__item.is-wide {
+    grid-column: 1 / -1;
   }
 }
