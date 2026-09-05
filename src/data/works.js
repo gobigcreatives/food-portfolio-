@@ -101,14 +101,14 @@ export const aboutVideos = [
 // built from the real reels. x/y are percentages of the stage; w is a
 // percentage width; z the stacking. w_/h_ set each tile's aspect ratio.
 export const heroTiles = [
-  { video: "/works/the-kitchen-reel.mp4", x: 42, y: 10, w: 9, z: 3, w_: 9, h_: 16 },
-  { video: "/works/the-kitchen-food-ambience.mp4", x: 51, y: 12, w: 8, z: 5, w_: 9, h_: 16 },
-  { video: "/works/the-kitchen-yellowtail-tiradito.mp4", x: 60, y: 15, w: 8, z: 4, w_: 9, h_: 16 },
-  { video: "/works/pinnova-pinner-reel.mp4", x: 32, y: 22, w: 9, z: 6, w_: 9, h_: 16 },
-  { video: "/works/pinnova-food-brolls.mp4", x: 23, y: 40, w: 9, z: 5, w_: 9, h_: 16 },
-  { video: "/works/pinnova-brolls-reel.mp4", x: 67, y: 36, w: 8, z: 4, w_: 9, h_: 16 },
-  { video: "/works/pinnova-carousel.mp4", x: 50, y: 46, w: 23, z: 8, w_: 16, h_: 10 },
-  { video: "/works/utsav-reel.mp4", x: 21, y: 58, w: 9, z: 7, w_: 9, h_: 16 },
-  { video: "/works/utsav-fast-cut-reel.mp4", x: 40, y: 65, w: 9, z: 5, w_: 9, h_: 16 },
-  { video: "/works/utsav-13-mar.mp4", x: 61, y: 62, w: 9, z: 6, w_: 9, h_: 16 },
+  { id: "001", title: "The Kitchen", video: "/works/the-kitchen-reel.mp4", x: 42, y: 10, w: 9, z: 3, w_: 9, h_: 16 },
+  { id: "002", title: "The Kitchen", video: "/works/the-kitchen-food-ambience.mp4", x: 51, y: 12, w: 8, z: 5, w_: 9, h_: 16 },
+  { id: "003", title: "The Kitchen", video: "/works/the-kitchen-yellowtail-tiradito.mp4", x: 60, y: 15, w: 8, z: 4, w_: 9, h_: 16 },
+  { id: "004", title: "Pinnova", video: "/works/pinnova-pinner-reel.mp4", x: 32, y: 22, w: 9, z: 6, w_: 9, h_: 16 },
+  { id: "005", title: "Pinnova", video: "/works/pinnova-food-brolls.mp4", x: 23, y: 40, w: 9, z: 5, w_: 9, h_: 16 },
+  { id: "006", title: "Pinnova", video: "/works/pinnova-brolls-reel.mp4", x: 67, y: 36, w: 8, z: 4, w_: 9, h_: 16 },
+  { id: "007", title: "Pinnova", video: "/works/pinnova-carousel.mp4", x: 50, y: 46, w: 23, z: 8, w_: 16, h_: 10 },
+  { id: "008", title: "Utsav", video: "/works/utsav-reel.mp4", x: 21, y: 58, w: 9, z: 7, w_: 9, h_: 16 },
+  { id: "009", title: "Utsav", video: "/works/utsav-fast-cut-reel.mp4", x: 40, y: 65, w: 9, z: 5, w_: 9, h_: 16 },
+  { id: "010", title: "Utsav", video: "/works/utsav-13-mar.mp4", x: 61, y: 62, w: 9, z: 6, w_: 9, h_: 16 },
 ];
