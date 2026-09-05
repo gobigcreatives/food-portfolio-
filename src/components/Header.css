@@ -18,7 +18,14 @@
 
 .site-header__logo {
   justify-self: start;
-  line-height: 1;
+  line-height: 0;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__logo .logo--auto {
+  height: 30px;
 }
 
 .site-header__center {
@@ -58,8 +65,9 @@
   .site-header {
     padding: 16px 18px;
   }
-  .site-header__logo .logo--horizontal .logo__mark {
-    font-size: 22px;
+  .site-header__logo,
+  .site-header__logo .logo--auto {
+    height: 24px;
   }
   .site-header__right {
     gap: 18px;

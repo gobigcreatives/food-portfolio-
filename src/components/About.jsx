@@ -1,4 +1,6 @@
-import Placeholder from "./Placeholder";
+import Media from "./Media";
+import Reveal from "./Reveal";
+import { aboutVideos } from "../data/works";
 import "./About.css";
 
 const stackTop = [
@@ -45,24 +47,27 @@ export default function About() {
 
       {/* twin video blocks */}
       <div className="about__videos">
-        <Placeholder tone="#0a0a0c" w={1} h={1} className="about__video" />
-        <Placeholder tone="#151310" w={1} h={1} className="about__video" />
+        {aboutVideos.map((v, i) => (
+          <Reveal key={i} delay={i * 120} y={30} className="about__video-wrap">
+            <Media item={v} className="about__video" />
+          </Reveal>
+        ))}
       </div>
 
-      <h2 className="about__headline">
+      <Reveal as="h2" className="about__headline">
         Think bigger, braver,
         <br />
         and bolder.
-      </h2>
+      </Reveal>
 
-      <p className="about__statement">
+      <Reveal as="p" className="about__statement" y={24}>
         We dive deep into who you are and what makes your business unique, then
         bring it all to life. goBIG Creatives shapes the future of brands —
         combining design, content, and social with a focus on real results.
-      </p>
-      <p className="about__statement about__statement--faint">
+      </Reveal>
+      <Reveal as="p" className="about__statement about__statement--faint" y={20}>
         Bold &amp; long-lasting.
-      </p>
+      </Reveal>
     </section>
   );
 }

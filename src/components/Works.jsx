@@ -1,5 +1,6 @@
 import { works } from "../data/works";
-import Placeholder from "./Placeholder";
+import Media from "./Media";
+import Reveal from "./Reveal";
 import "./Works.css";
 
 // Per-work grid placement to recreate the scattered editorial layout.
@@ -22,16 +23,17 @@ const layout = {
 export default function Works() {
   return (
     <section className="works" id="works" data-header="light">
-      <p className="works__tagline">
+      <Reveal as="p" className="works__tagline" y={24}>
         We help brands goBIG&nbsp;&mdash; bold, unforgettable, and built to
         make a long-lasting&nbsp;impression.
-      </p>
+      </Reveal>
 
       <div className="works__grid">
         {works.map((work) => {
           const place = layout[work.id] || { col: "2 / 6", mt: 0 };
           return (
-            <a
+            <Reveal
+              as="a"
               key={work.id}
               href="#works"
               className="work"
@@ -41,13 +43,13 @@ export default function Works() {
               }}
             >
               <div className="work__media">
-                <Placeholder tone={work.tone} w={work.w} h={work.h} />
+                <Media item={work} />
               </div>
               <div className="work__meta">
                 <span className="label label--xs work__id">+ {work.id}</span>
                 <span className="label work__title">{work.title}</span>
               </div>
-            </a>
+            </Reveal>
           );
         })}
       </div>

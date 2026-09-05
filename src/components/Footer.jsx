@@ -5,16 +5,8 @@ export default function Footer() {
   return (
     <footer className="footer" id="contact">
       <div className="footer__lockup">
-        <Logo variant="stacked" className="footer__logo" />
-        <span className="footer__tagline">
-          <span className="footer__tagline-for">THINK</span>
-          <em>BIGGER</em>
-          <span className="footer__tagline-and">
-            BRAVER
-            <br />
-            BOLDER
-          </span>
-        </span>
+        <Logo tone="white" className="footer__logo" />
+        <span className="footer__tagline">THINK BIGGER, BRAVER, BOLDER.</span>
       </div>
 
       <div className="footer__cols">
@@ -28,8 +20,8 @@ export default function Footer() {
         </div>
         <div className="footer__col" id="talents">
           <span className="label label--xs">Work With Us</span>
-          <a className="label label--xs" href="mailto:hello@gobigcreatives.com">
-            hello@gobigcreatives.com
+          <a className="label label--xs" href="mailto:info@gobigcreatives.com">
+            info@gobigcreatives.com
           </a>
         </div>
         <div className="footer__col footer__col--right">

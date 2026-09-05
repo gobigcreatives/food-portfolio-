@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <header className={`site-header ${onLight ? "is-light" : ""}`}>
       <a href="#top" className="site-header__logo" aria-label="goBIG Creatives home">
-        <Logo variant="horizontal" />
+        <Logo tone="auto" />
       </a>
 
       <nav className="site-header__center">

@@ -1,18 +1,28 @@
 import "./Logo.css";
 
 /**
- * goBIG Creatives wordmark, built from the brand typeface (Montserrat).
- * `variant` — "horizontal" (default) for the header, "stacked" for hero/footer.
- * Colour is inherited via `currentColor` so it works on light and dark grounds.
+ * goBIG Creatives official wordmark (extracted from the brand logo file).
+ * `tone`:
+ *   "white" — white logo (for dark grounds)
+ *   "blue"  — Prussian-blue logo (for light grounds)
+ *   "auto"  — renders both, stacked; the parent toggles which shows via the
+ *             `is-light` class (used by the scroll-aware header).
  */
-export default function Logo({ variant = "horizontal", className = "" }) {
-  return (
-    <span className={`logo logo--${variant} ${className}`} aria-label="goBIG Creatives">
-      <span className="logo__mark">
-        <span className="logo__go">go</span>
-        <span className="logo__big">BIG</span>
+export default function Logo({ tone = "white", className = "" }) {
+  if (tone === "auto") {
+    return (
+      <span className={`logo logo--auto ${className}`} aria-label="goBIG Creatives">
+        <img className="logo__img logo__img--white" src="/brand/gobig-white.png" alt="" />
+        <img className="logo__img logo__img--blue" src="/brand/gobig-blue.png" alt="" />
       </span>
-      <span className="logo__creatives">Creatives</span>
-    </span>
+    );
+  }
+
+  return (
+    <img
+      className={`logo logo--img ${className}`}
+      src={tone === "blue" ? "/brand/gobig-blue.png" : "/brand/gobig-white.png"}
+      alt="goBIG Creatives"
+    />
   );
 }

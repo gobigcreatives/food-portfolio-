@@ -18,6 +18,14 @@ export const works = [
   { id: "012", title: "The Dazzling", tone: "#cfc9bf", w: 16, h: 9, span: "wide-center" },
 ];
 
+// The two large blocks in the About section. Add `video` or `image` to show
+// real media (see Media.jsx); otherwise a neutral placeholder is shown.
+// Example: { video: "/about/reel-1.mp4", poster: "/about/reel-1.jpg", w: 1, h: 1 }
+export const aboutVideos = [
+  { tone: "#0a1330", w: 1, h: 1, title: "Showreel" },
+  { tone: "#12193a", w: 1, h: 1, title: "Behind the scenes" },
+];
+
 // Hero collage — the scattered diagonal cluster on the landing screen.
 // x/y are percentages of the stage; w is a percentage width; z the stacking.
 export const heroTiles = [
