@@ -22,7 +22,6 @@
 .hero__tile {
   position: absolute;
   will-change: transform; /* transform is driven per-frame by the orbit loop */
-  cursor: pointer;
 }
 
 .hero__tile .placeholder,
