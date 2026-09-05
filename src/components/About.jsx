@@ -23,9 +23,12 @@ export default function About() {
 
         <div className="about__stack-cipher">
           {Array.from({ length: 7 }).map((_, i) => (
-            <p key={i} className="about__stack-line about__stack-line--cipher">
-              goBIG
-            </p>
+            <img
+              key={i}
+              className="about__stack-logo"
+              src="/brand/gobig-blue.png"
+              alt="goBIG Creatives"
+            />
           ))}
           <span className="about__copyright about__copyright--left" aria-hidden>
             ©
