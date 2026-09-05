@@ -8,6 +8,20 @@ import "./Hero.css";
 const DEFAULT_LABEL = "Selected Work";
 const SPIN_SPEED = 3; // degrees per second, clockwise
 
+// Evenly-distributed arrangement for small screens (9 portrait reels in a
+// gently jittered 3x3 scatter). x/y are % of the stage; w is % width.
+const MOBILE_LAYOUT = [
+  { x: 6, y: 14, w: 27 },
+  { x: 37, y: 17, w: 27 },
+  { x: 67, y: 13, w: 27 },
+  { x: 8, y: 40, w: 27 },
+  { x: 37, y: 43, w: 27 },
+  { x: 66, y: 39, w: 27 },
+  { x: 7, y: 66, w: 27 },
+  { x: 38, y: 68, w: 27 },
+  { x: 65, y: 64, w: 27 },
+];
+
 export default function Hero() {
   const clusterRef = useRef(null);
   const tileRefs = useRef([]);
@@ -96,15 +110,12 @@ export default function Hero() {
           className={`hero__cluster ${active !== null ? "has-active" : ""}`}
         >
           {heroTiles.map((tile, i) => {
-            // On mobile, pull tiles toward the centre and enlarge them so the
-            // cluster reads as one dense, clearly-rotating collage (like cipher).
-            const cx = 50;
-            const cy = 50;
-            const comp = 0.66; // compress positions toward centre
-            const wmul = 1.95; // enlarge tiles
-            const x = isMobile ? cx + (tile.x - cx) * comp : tile.x;
-            const y = isMobile ? cy + (tile.y - cy) * comp : tile.y;
-            const w = isMobile ? tile.w * wmul : tile.w;
+            // Desktop uses the scattered diagonal positions; mobile uses an
+            // evenly-distributed 3x3 scatter so nothing bunches up.
+            const m = MOBILE_LAYOUT[i] || { x: tile.x, y: tile.y, w: tile.w };
+            const x = isMobile ? m.x : tile.x;
+            const y = isMobile ? m.y : tile.y;
+            const w = isMobile ? m.w : tile.w;
             return (
             <figure
               key={(tile.video || tile.id) + i}
