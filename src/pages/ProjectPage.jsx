@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProject } from "../data/works";
+import { getProjectImages } from "../data/projectImages";
 import Media from "../components/Media";
 import ProjectClip from "../components/ProjectClip";
 import Reveal from "../components/Reveal";
@@ -9,6 +10,7 @@ import "./ProjectPage.css";
 export default function ProjectPage() {
   const { slug } = useParams();
   const project = getProject(slug);
+  const images = getProjectImages(slug);
 
   // Start each project page at the top.
   useEffect(() => {
@@ -67,6 +69,19 @@ export default function ProjectPage() {
           );
         })}
       </div>
+
+      {images.length > 0 && (
+        <section className="project__photos">
+          <h2 className="project__photos-title">Photos</h2>
+          <div className="project__photos-grid">
+            {images.map((src, i) => (
+              <Reveal key={src} delay={(i % 3) * 80} className="project__photo">
+                <img src={src} alt={`${project.title} photo ${i + 1}`} loading="lazy" />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }
