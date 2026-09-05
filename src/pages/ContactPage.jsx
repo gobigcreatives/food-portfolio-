@@ -1,0 +1,96 @@
+import { useEffect, useState } from "react";
+import Logo from "../components/Logo";
+import "./ContactPage.css";
+
+const EMAIL = "info@gobigcreatives.com";
+
+export default function ContactPage() {
+  const [message, setMessage] = useState("");
+  const [accepted, setAccepted] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  function sendEmail() {
+    if (!accepted) return;
+    const subject = encodeURIComponent("New enquiry — goBIG Creatives");
+    const body = encodeURIComponent(message || "");
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+  }
+
+  return (
+    <main className="contact">
+      <div className="contact__grid">
+        {/* left — brand + details */}
+        <aside className="contact__aside">
+          <div className="contact__mark">
+            <Logo tone="blue" />
+          </div>
+          <span className="contact__rule" />
+
+          <div className="contact__block">
+            <p>goBIG Creatives</p>
+            <p>Food videography &amp; photography</p>
+          </div>
+
+          <div className="contact__block">
+            <p>work with us</p>
+            <p>
+              mail .{" "}
+              <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+            </p>
+          </div>
+
+          <div className="contact__block contact__block--muted">
+            <p>Restaurants . Cafes</p>
+            <p>Food brands . Chefs</p>
+          </div>
+
+          <span className="contact__rule contact__rule--bottom" />
+          <p className="contact__copy">© {new Date().getFullYear()}</p>
+        </aside>
+
+        {/* right — message + send */}
+        <section className="contact__form">
+          <h1 className="contact__hi">Hello goBIG&nbsp;Creatives,</h1>
+          <label htmlFor="contact-message" className="contact__label">
+            <textarea
+              id="contact-message"
+              className="contact__textarea"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Drop us a line with your name, brand and what you need — a shoot, a monthly retainer, or content for your next launch. We'll get back to you as soon as we can."
+              rows={4}
+            />
+          </label>
+
+          <div className="contact__actions">
+            <button
+              type="button"
+              className={`contact__accept ${accepted ? "is-on" : ""}`}
+              onClick={() => setAccepted((v) => !v)}
+              aria-pressed={accepted}
+            >
+              <span className="contact__dot" />
+              Accept privacy
+            </button>
+
+            <button
+              type="button"
+              className="contact__send"
+              onClick={sendEmail}
+              disabled={!accepted}
+            >
+              Send email
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <div className="contact__bigword" aria-hidden="true">
+        CONTACT
+      </div>
+    </main>
+  );
+}

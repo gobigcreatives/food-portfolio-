@@ -25,9 +25,9 @@ export default function Header() {
       </nav>
 
       <nav className="site-header__right">
-        <a href="mailto:info@gobigcreatives.com" className="label">
+        <Link to="/contact" className="label">
           Contact
-        </a>
+        </Link>
         <Link to="/about" className="label">
           About
         </Link>

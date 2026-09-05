@@ -6,6 +6,7 @@ import Preloader from "./components/Preloader";
 import Landing from "./pages/Landing";
 import WorksPage from "./pages/WorksPage";
 import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 import ProjectPage from "./pages/ProjectPage";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/works" element={<WorksPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/work/:slug" element={<ProjectPage />} />
       </Routes>
       {/* Footer shows on every page except the single-screen landing */}
