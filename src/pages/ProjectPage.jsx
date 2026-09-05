@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProject } from "../data/works";
 import Media from "../components/Media";
+import ProjectClip from "../components/ProjectClip";
 import Reveal from "../components/Reveal";
 import "./ProjectPage.css";
 
@@ -51,7 +52,11 @@ export default function ProjectPage() {
               className={`project__item ${landscape ? "is-wide" : ""}`}
             >
               <div className="project__media">
-                <Media item={clip} />
+                {clip.video ? (
+                  <ProjectClip clip={clip} />
+                ) : (
+                  <Media item={clip} />
+                )}
               </div>
               {clip.subtitle && (
                 <span className="project__caption label label--xs">

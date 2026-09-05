@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useLenis } from "./hooks/useLenis";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,8 +9,6 @@ import ProjectPage from "./pages/ProjectPage";
 
 export default function App() {
   useLenis();
-  const location = useLocation();
-  const isLanding = location.pathname === "/";
 
   return (
     <>
@@ -21,8 +19,7 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/work/:slug" element={<ProjectPage />} />
       </Routes>
-      {/* Footer shows on every page except the single-screen landing */}
-      {!isLanding && <Footer />}
+      <Footer />
     </>
   );
 }
