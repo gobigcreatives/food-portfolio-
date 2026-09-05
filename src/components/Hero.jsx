@@ -8,18 +8,19 @@ import "./Hero.css";
 const DEFAULT_LABEL = "Selected Work";
 const SPIN_SPEED = 3; // degrees per second, clockwise
 
-// Evenly-distributed arrangement for small screens (9 portrait reels in a
-// gently jittered 3x3 scatter). x/y are % of the stage; w is % width.
+// Mobile: place the 9 portrait reels evenly on a ring around the centre mark
+// (40° apart) so they revolve around it like planets around the sun. x/y are
+// the tile's top-left as % of the stage; the ring is ~circular in pixels.
 const MOBILE_LAYOUT = [
-  { x: 6, y: 14, w: 27 },
-  { x: 37, y: 17, w: 27 },
-  { x: 67, y: 13, w: 27 },
-  { x: 8, y: 40, w: 27 },
-  { x: 37, y: 43, w: 27 },
-  { x: 66, y: 39, w: 27 },
-  { x: 7, y: 66, w: 27 },
-  { x: 38, y: 68, w: 27 },
-  { x: 65, y: 64, w: 27 },
+  { x: 39, y: 23.5, w: 22 },
+  { x: 61.5, y: 27.5, w: 22 },
+  { x: 73.5, y: 37.5, w: 22 },
+  { x: 69.3, y: 49, w: 22 },
+  { x: 51, y: 56.5, w: 22 },
+  { x: 27, y: 56.5, w: 22 },
+  { x: 8.7, y: 49, w: 22 },
+  { x: 4.5, y: 37.5, w: 22 },
+  { x: 16.5, y: 27.5, w: 22 },
 ];
 
 export default function Hero() {
