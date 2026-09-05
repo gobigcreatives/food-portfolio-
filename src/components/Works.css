@@ -76,3 +76,8 @@
     margin-top: 3rem !important;
   }
 }
+
+.work__subtitle {
+  opacity: 0.5;
+  font-weight: 400;
+}

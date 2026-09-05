@@ -4,9 +4,31 @@
 // `w`/`h` are the intrinsic aspect ratios used to size each grid tile.
 
 export const works = [
-  { id: "001", title: "The Circle", tone: "#101014", w: 4, h: 3, span: "wide-left" },
-  { id: "002", title: "Unerual", tone: "#c9c4bc", w: 3, h: 4, span: "narrow-right" },
-  { id: "003", title: "Dualie", tone: "#e7e6e2", w: 3, h: 4, span: "tall-left" },
+  // The Kitchen — three vertical (9:16) food reels
+  {
+    id: "001",
+    title: "The Kitchen",
+    subtitle: "Reel",
+    video: "/works/the-kitchen-reel.mp4",
+    w: 9,
+    h: 16,
+  },
+  {
+    id: "002",
+    title: "The Kitchen",
+    subtitle: "Food & Ambience",
+    video: "/works/the-kitchen-food-ambience.mp4",
+    w: 9,
+    h: 16,
+  },
+  {
+    id: "003",
+    title: "The Kitchen",
+    subtitle: "Yellowtail Tiradito",
+    video: "/works/the-kitchen-yellowtail-tiradito.mp4",
+    w: 9,
+    h: 16,
+  },
   { id: "004", title: "Counter Culture", tone: "#0a0a0c", w: 4, h: 3, span: "mid-right" },
   { id: "005", title: "BDX", tone: "#c7a7a3", w: 3, h: 3, span: "small-right" },
   { id: "006", title: "The Ultimate Shield", tone: "#8fb8d8", w: 16, h: 9, span: "hero-center" },
