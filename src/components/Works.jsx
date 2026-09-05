@@ -19,9 +19,6 @@ const layout = {
   "008": { col: "2 / 5", mt: 6 },
   "009": { col: "6 / 9", mt: 2 },
   "010": { col: "9 / 12", mt: 7 },
-  // remaining placeholders
-  "011": { col: "8 / 11", mt: 3 },
-  "012": { col: "3 / 8", mt: 6 },
 };
 
 export default function Works() {

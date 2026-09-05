@@ -87,8 +87,6 @@ export const works = [
     w: 9,
     h: 16,
   },
-  { id: "011", title: "Selected Work", tone: "#2b3a2e", w: 4, h: 3 },
-  { id: "012", title: "Selected Work", tone: "#cfc9bf", w: 16, h: 9 },
 ];
 
 // The two large blocks in the About section. Add `video` or `image` to show
@@ -99,20 +97,18 @@ export const aboutVideos = [
   { tone: "#12193a", w: 1, h: 1, title: "Behind the scenes" },
 ];
 
-// Hero collage — the scattered diagonal cluster on the landing screen.
-// x/y are percentages of the stage; w is a percentage width; z the stacking.
+// Hero collage — the scattered diagonal cluster on the landing screen,
+// built from the real reels. x/y are percentages of the stage; w is a
+// percentage width; z the stacking. w_/h_ set each tile's aspect ratio.
 export const heroTiles = [
-  { id: "004", tone: "#0d0d10", x: 44, y: 15, w: 15, z: 2, w_: 4, h_: 3 },
-  { id: "us-jars", tone: "#b7b3ab", x: 50, y: 18, w: 8, z: 4, w_: 3, h_: 4 },
-  { id: "hands", tone: "#8f8b83", x: 61, y: 15, w: 9, z: 3, w_: 4, h_: 3 },
-  { id: "grass", tone: "#7d786e", x: 69, y: 18, w: 10, z: 2, w_: 4, h_: 3 },
-  { id: "hall", tone: "#151412", x: 36, y: 25, w: 13, z: 5, w_: 3, h_: 4 },
-  { id: "silhouette", tone: "#c8c4bc", x: 66, y: 38, w: 10, z: 3, w_: 3, h_: 4 },
-  { id: "perfume", tone: "#2a2824", x: 28, y: 34, w: 14, z: 4, w_: 4, h_: 3 },
-  { id: "portrait", tone: "#3a3630", x: 22, y: 48, w: 14, z: 6, w_: 4, h_: 3 },
-  { id: "shield", tone: "#8fb8d8", x: 53, y: 47, w: 22, z: 8, w_: 16, h_: 9 },
-  { id: "eye", tone: "#1c1a17", x: 20, y: 60, w: 13, z: 7, w_: 4, h_: 3 },
-  { id: "closeup", tone: "#6f6a62", x: 52, y: 62, w: 12, z: 5, w_: 4, h_: 3 },
-  { id: "rug", tone: "#8a857b", x: 39, y: 71, w: 11, z: 4, w_: 4, h_: 3 },
-  { id: "field", tone: "#9c968b", x: 48, y: 72, w: 10, z: 3, w_: 4, h_: 3 },
+  { video: "/works/the-kitchen-reel.mp4", x: 42, y: 10, w: 9, z: 3, w_: 9, h_: 16 },
+  { video: "/works/the-kitchen-food-ambience.mp4", x: 51, y: 12, w: 8, z: 5, w_: 9, h_: 16 },
+  { video: "/works/the-kitchen-yellowtail-tiradito.mp4", x: 60, y: 15, w: 8, z: 4, w_: 9, h_: 16 },
+  { video: "/works/pinnova-pinner-reel.mp4", x: 32, y: 22, w: 9, z: 6, w_: 9, h_: 16 },
+  { video: "/works/pinnova-food-brolls.mp4", x: 23, y: 40, w: 9, z: 5, w_: 9, h_: 16 },
+  { video: "/works/pinnova-brolls-reel.mp4", x: 67, y: 36, w: 8, z: 4, w_: 9, h_: 16 },
+  { video: "/works/pinnova-carousel.mp4", x: 50, y: 46, w: 23, z: 8, w_: 16, h_: 10 },
+  { video: "/works/utsav-reel.mp4", x: 21, y: 58, w: 9, z: 7, w_: 9, h_: 16 },
+  { video: "/works/utsav-fast-cut-reel.mp4", x: 40, y: 65, w: 9, z: 5, w_: 9, h_: 16 },
+  { video: "/works/utsav-13-mar.mp4", x: 61, y: 62, w: 9, z: 6, w_: 9, h_: 16 },
 ];

@@ -25,14 +25,16 @@
   will-change: transform;
 }
 
-.hero__tile .placeholder {
-  filter: grayscale(1) contrast(1.02);
+.hero__tile .placeholder,
+.hero__tile .media {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* the pale shield tile keeps its colour, like the original */
-.hero__tile:nth-child(9) .placeholder {
-  filter: none;
+.hero__tile .media--video {
+  border-radius: 1px;
 }
 
 /* Central pulsing oval / eye mark */

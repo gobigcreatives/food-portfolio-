@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { heroTiles } from "../data/works";
-import Placeholder from "./Placeholder";
+import Media from "./Media";
 import "./Hero.css";
 
 export default function Hero() {
@@ -34,7 +34,7 @@ export default function Hero() {
         >
           {heroTiles.map((tile, i) => (
             <figure
-              key={tile.id + i}
+              key={(tile.video || tile.id) + i}
               className="hero__tile"
               style={{
                 left: `${tile.x}%`,
@@ -46,7 +46,7 @@ export default function Hero() {
                 }px, 0)`,
               }}
             >
-              <Placeholder tone={tile.tone} w={tile.w_} h={tile.h_} />
+              <Media item={{ video: tile.video, tone: tile.tone, w: tile.w_, h: tile.h_ }} />
             </figure>
           ))}
         </div>
