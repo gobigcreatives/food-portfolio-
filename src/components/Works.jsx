@@ -26,8 +26,8 @@ export default function Works() {
   return (
     <section className="works" id="works" data-header="light">
       <Reveal as="p" className="works__tagline" y={24}>
-        We make food look like it&nbsp;tastes&nbsp;&mdash; videography-led
-        content built for Reels, TikTok and everywhere people scroll&nbsp;hungry.
+        We make food look like it tastes. Videography-led content built for
+        Reels, TikTok and everywhere people scroll&nbsp;hungry.
       </Reveal>
 
       <div className="works__grid">
@@ -52,7 +52,7 @@ export default function Works() {
                 <span className="label work__title">
                   {work.title}
                   {work.subtitle && (
-                    <span className="work__subtitle"> — {work.subtitle}</span>
+                    <span className="work__subtitle"> · {work.subtitle}</span>
                   )}
                 </span>
               </div>

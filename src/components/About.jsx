@@ -61,7 +61,7 @@ export default function About() {
       </Reveal>
 
       <Reveal as="p" className="about__statement" y={24}>
-        goBIG Creatives is the video-and-photo arm built for one job — making
+        goBIG Creatives is the video-and-photo arm built for one job: making
         food content that actually stops the scroll. We shoot mostly video,
         but every frame is composed like a photo first. You work directly with
         the person shooting, editing and strategising your content, start to

@@ -102,15 +102,15 @@ export function slugify(title) {
 export const projectMeta = {
   "the-kitchen": {
     description:
-      "A cinematic food & ambience series for The Kitchen — reels that turn dishes and dining moments into crave-worthy motion.",
+      "A cinematic food and ambience series for The Kitchen. Reels that turn dishes and dining moments into crave-worthy motion.",
   },
   pinnova: {
     description:
-      "Scroll-stopping social content for Pinnova — pinner reels, food b-rolls and a carousel built to make the brand impossible to ignore.",
+      "Scroll-stopping social content for Pinnova: pinner reels, food b-rolls and a carousel built to make the brand impossible to ignore.",
   },
   utsav: {
     description:
-      "Fast-cut, high-energy reels for Utsav — celebratory food storytelling crafted to travel across feeds.",
+      "Fast-cut, high-energy reels for Utsav. Celebratory food storytelling crafted to travel across feeds.",
   },
 };
 
