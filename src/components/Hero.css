@@ -15,14 +15,13 @@
 .hero__cluster {
   position: absolute;
   inset: 0;
-  transition: transform 0.6s var(--ease);
-  will-change: transform;
+  transform-origin: 50% 50%;
+  will-change: transform; /* rotation + parallax driven per-frame */
 }
 
 .hero__tile {
   position: absolute;
-  transition: transform 0.7s var(--ease);
-  will-change: transform;
+  will-change: transform; /* transform is driven per-frame by the orbit loop */
   cursor: pointer;
 }
 

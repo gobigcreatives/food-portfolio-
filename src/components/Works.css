@@ -32,14 +32,17 @@
   overflow: hidden;
 }
 
-.work__media .placeholder {
+/* default: grayscale + dimmed; hover lifts to full colour (like the hero) */
+.work__media .placeholder,
+.work__media .media {
   transition: transform 0.9s var(--ease), filter 0.6s var(--ease);
-  filter: grayscale(0.15);
+  filter: grayscale(1) brightness(0.82);
 }
 
-.work:hover .work__media .placeholder {
+.work:hover .work__media .placeholder,
+.work:hover .work__media .media {
   transform: scale(1.04);
-  filter: grayscale(0);
+  filter: none;
 }
 
 .work__meta {

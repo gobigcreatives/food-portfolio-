@@ -5,69 +5,97 @@ import { scrambleTo } from "../utils/scramble";
 import "./Hero.css";
 
 const DEFAULT_LABEL = "Selected Work";
+const SPIN_SPEED = 3; // degrees per second, clockwise
 
 export default function Hero() {
-  const stageRef = useRef(null);
+  const clusterRef = useRef(null);
+  const tileRefs = useRef([]);
+  const pointerRef = useRef({ x: 0, y: 0 });
+  const pausedRef = useRef(false); // pause the orbit while hovering a tile
   const captionRef = useRef(null);
   const cancelRef = useRef(null);
-  const [pointer, setPointer] = useState({ x: 0, y: 0 });
-  const [active, setActive] = useState(null); // index of hovered tile
+
+  const [active, setActive] = useState(null);
   const [index, setIndex] = useState("010");
 
-  // Subtle parallax: the cluster drifts opposite the cursor.
+  // Track cursor for parallax (via ref, so it doesn't re-render every move).
   useEffect(() => {
-    const stage = stageRef.current;
-    if (!stage) return;
-
     function onMove(e) {
-      const rect = stage.getBoundingClientRect();
-      const nx = (e.clientX - rect.left) / rect.width - 0.5;
-      const ny = (e.clientY - rect.top) / rect.height - 0.5;
-      setPointer({ x: nx, y: ny });
+      const el = clusterRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      pointerRef.current = {
+        x: (e.clientX - rect.left) / rect.width - 0.5,
+        y: (e.clientY - rect.top) / rect.height - 0.5,
+      };
     }
-
     window.addEventListener("mousemove", onMove);
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
-  // Scramble the caption to the hovered project's name.
+  // Continuous clockwise orbit: the whole cluster rotates while each tile
+  // counter-rotates to stay upright. Pauses while a tile is hovered.
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let raf;
+    let angle = 0;
+    let last = performance.now();
+
+    function loop(now) {
+      const dt = (now - last) / 1000;
+      last = now;
+      if (!reduce && !pausedRef.current) angle += SPIN_SPEED * dt;
+
+      const p = pointerRef.current;
+      if (clusterRef.current) {
+        clusterRef.current.style.transform = `translate3d(${p.x * -24}px, ${
+          p.y * -24
+        }px, 0) rotate(${angle}deg)`;
+      }
+      for (const el of tileRefs.current) {
+        if (el) el.style.transform = `rotate(${-angle}deg)`;
+      }
+      raf = requestAnimationFrame(loop);
+    }
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   function setCaption(text) {
     cancelRef.current?.();
     cancelRef.current = scrambleTo(captionRef.current, text.toUpperCase());
   }
 
   function onEnter(tile, i) {
+    pausedRef.current = true;
     setActive(i);
     setIndex(tile.id);
     setCaption(tile.title);
   }
 
   function onLeave() {
+    pausedRef.current = false;
     setActive(null);
     setCaption(DEFAULT_LABEL);
   }
 
   return (
     <section className="hero" id="top">
-      <div className="hero__stage" ref={stageRef}>
+      <div className="hero__stage">
         <div
+          ref={clusterRef}
           className={`hero__cluster ${active !== null ? "has-active" : ""}`}
-          style={{
-            transform: `translate3d(${pointer.x * -24}px, ${pointer.y * -24}px, 0)`,
-          }}
         >
           {heroTiles.map((tile, i) => (
             <figure
               key={(tile.video || tile.id) + i}
+              ref={(el) => (tileRefs.current[i] = el)}
               className={`hero__tile ${active === i ? "is-active" : ""}`}
               style={{
                 left: `${tile.x}%`,
                 top: `${tile.y}%`,
                 width: `${tile.w}%`,
                 zIndex: active === i ? 50 : tile.z,
-                transform: `translate3d(${pointer.x * (tile.z * 2)}px, ${
-                  pointer.y * (tile.z * 2)
-                }px, 0)`,
               }}
               onMouseEnter={() => onEnter(tile, i)}
               onMouseLeave={onLeave}
@@ -77,7 +105,7 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Central pulsing oval mark */}
+        {/* Central pulsing oval mark (stays fixed while clips orbit it) */}
         <div className="hero__mark" aria-hidden="true">
           <span />
           <span />
