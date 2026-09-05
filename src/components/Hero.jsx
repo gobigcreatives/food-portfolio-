@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { heroTiles } from "../data/works";
 import Media from "./Media";
 import { scrambleTo } from "../utils/scramble";
@@ -118,10 +119,10 @@ export default function Hero() {
         <span className="label hero__caption" ref={captionRef}>
           {DEFAULT_LABEL.toUpperCase()}
         </span>
-        <a href="#works" className="hero__jour" aria-label="View works">
+        <Link to="/works" className="hero__jour" aria-label="View works">
           <span className="hero__jour-word">WORK</span>
           <span className="hero__jour-arrow">↗</span>
-        </a>
+        </Link>
       </div>
     </section>
   );
