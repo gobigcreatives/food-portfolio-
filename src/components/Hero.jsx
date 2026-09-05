@@ -59,9 +59,10 @@ export default function Hero() {
   }, []);
 
   // Continuous clockwise orbit: the whole cluster rotates while each tile
-  // counter-rotates to stay upright. Pauses while a tile is hovered.
+  // counter-rotates to stay upright. Pauses only while a tile is hovered.
+  // (Runs regardless of the OS "reduce motion" setting — the orbit is core to
+  // the landing and is explicitly wanted on mobile.)
   useEffect(() => {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let raf;
     let angle = 0;
     let last = performance.now();
@@ -69,7 +70,7 @@ export default function Hero() {
     function loop(now) {
       const dt = (now - last) / 1000;
       last = now;
-      if (!reduce && !pausedRef.current) angle += SPIN_SPEED * dt;
+      if (!pausedRef.current) angle += SPIN_SPEED * dt;
 
       const p = pointerRef.current;
       if (clusterRef.current) {
