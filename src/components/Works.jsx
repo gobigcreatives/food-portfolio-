@@ -10,16 +10,16 @@ const layout = {
   "001": { col: "2 / 5", mt: 0 },
   "002": { col: "8 / 11", mt: 7 },
   "003": { col: "5 / 8", mt: 4 },
-  // Pinnova (portrait trio)
+  // Pinnova (three portrait + one landscape carousel)
   "004": { col: "2 / 5", mt: 6 },
   "005": { col: "6 / 9", mt: 1 },
   "006": { col: "9 / 12", mt: 8 },
+  "007": { col: "3 / 9", mt: 4 }, // landscape carousel
   // Utsav (portrait trio)
-  "007": { col: "1 / 4", mt: 5 },
-  "008": { col: "5 / 8", mt: 3 },
-  "009": { col: "9 / 12", mt: 7 },
+  "008": { col: "2 / 5", mt: 6 },
+  "009": { col: "6 / 9", mt: 2 },
+  "010": { col: "9 / 12", mt: 7 },
   // remaining placeholders
-  "010": { col: "7 / 11", mt: 2 },
   "011": { col: "8 / 11", mt: 3 },
   "012": { col: "3 / 8", mt: 6 },
 };

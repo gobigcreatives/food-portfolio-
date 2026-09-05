@@ -54,9 +54,17 @@ export const works = [
     w: 9,
     h: 16,
   },
-  // Utsav — three vertical (9:16) reels
   {
     id: "007",
+    title: "Pinnova",
+    subtitle: "Carousel",
+    video: "/works/pinnova-carousel.mp4",
+    w: 16,
+    h: 10,
+  },
+  // Utsav — three vertical (9:16) reels
+  {
+    id: "008",
     title: "Utsav",
     subtitle: "Reel",
     video: "/works/utsav-reel.mp4",
@@ -64,7 +72,7 @@ export const works = [
     h: 16,
   },
   {
-    id: "008",
+    id: "009",
     title: "Utsav",
     subtitle: "Fast Cut Reel",
     video: "/works/utsav-fast-cut-reel.mp4",
@@ -72,16 +80,15 @@ export const works = [
     h: 16,
   },
   {
-    id: "009",
+    id: "010",
     title: "Utsav",
     subtitle: "13 Mar",
     video: "/works/utsav-13-mar.mp4",
     w: 9,
     h: 16,
   },
-  { id: "010", title: "LC", tone: "#2b3a2e", w: 4, h: 3, span: "mid-right" },
-  { id: "011", title: "Marly Shoot Studio", tone: "#9aa0a6", w: 3, h: 3, span: "small-right" },
-  { id: "012", title: "The Dazzling", tone: "#cfc9bf", w: 16, h: 9, span: "wide-center" },
+  { id: "011", title: "Selected Work", tone: "#2b3a2e", w: 4, h: 3 },
+  { id: "012", title: "Selected Work", tone: "#cfc9bf", w: 16, h: 9 },
 ];
 
 // The two large blocks in the About section. Add `video` or `image` to show
