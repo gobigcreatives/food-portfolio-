@@ -49,12 +49,7 @@ export default function Works() {
               </div>
               <div className="work__meta">
                 <span className="label label--xs work__id">+ {work.id}</span>
-                <span className="label work__title">
-                  {work.title}
-                  {work.subtitle && (
-                    <span className="work__subtitle"> · {work.subtitle}</span>
-                  )}
-                </span>
+                <span className="label work__title">{work.title}</span>
               </div>
             </Reveal>
           );
