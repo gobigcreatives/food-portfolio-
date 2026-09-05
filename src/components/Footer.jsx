@@ -6,17 +6,19 @@ export default function Footer() {
     <footer className="footer" id="contact">
       <div className="footer__lockup">
         <Logo tone="white" className="footer__logo" />
-        <span className="footer__tagline">THINK BIGGER, BRAVER, BOLDER.</span>
+        <span className="footer__tagline">
+          LET&rsquo;S MAKE YOUR FOOD IMPOSSIBLE TO SCROLL PAST.
+        </span>
       </div>
 
       <div className="footer__cols">
         <div className="footer__col">
           <span className="label label--xs">goBIG Creatives</span>
-          <span className="label label--xs">Brand &amp; Design Studio</span>
+          <span className="label label--xs">Food Video &amp; Photo</span>
         </div>
         <div className="footer__col">
-          <span className="label label--xs">Bigger · Braver</span>
-          <span className="label label--xs">Bolder</span>
+          <span className="label label--xs">Restaurants · Brands</span>
+          <span className="label label--xs">Cafes · Chefs</span>
         </div>
         <div className="footer__col">
           <span className="label label--xs">Work With Us</span>

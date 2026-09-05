@@ -26,8 +26,8 @@ export default function Works() {
   return (
     <section className="works" id="works" data-header="light">
       <Reveal as="p" className="works__tagline" y={24}>
-        We help brands goBIG&nbsp;&mdash; bold, unforgettable, and built to
-        make a long-lasting&nbsp;impression.
+        We make food look like it&nbsp;tastes&nbsp;&mdash; videography-led
+        content built for Reels, TikTok and everywhere people scroll&nbsp;hungry.
       </Reveal>
 
       <div className="works__grid">

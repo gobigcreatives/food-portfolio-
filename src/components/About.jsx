@@ -4,10 +4,10 @@ import { aboutVideos } from "../data/works";
 import "./About.css";
 
 const stackTop = [
-  "Bold Brands Built Big",
-  "Bigger Braver Bolder Always",
-  "Design Content Social Results",
-  "Creativity Meets Real Impact",
+  "Shoot For The Scroll",
+  "Food That Stops Feeds",
+  "Made For Reels And TikTok",
+  "Video And Photo Done Right",
 ];
 
 export default function About() {
@@ -55,18 +55,20 @@ export default function About() {
       </div>
 
       <Reveal as="h2" className="about__headline">
-        Think bigger, braver,
+        Shoot for the scroll,
         <br />
-        and bolder.
+        not the portfolio.
       </Reveal>
 
       <Reveal as="p" className="about__statement" y={24}>
-        We dive deep into who you are and what makes your business unique, then
-        bring it all to life. goBIG Creatives shapes the future of brands —
-        combining design, content, and social with a focus on real results.
+        goBIG Creatives is the video-and-photo arm built for one job — making
+        food content that actually stops the scroll. We shoot mostly video,
+        but every frame is composed like a photo first. You work directly with
+        the person shooting, editing and strategising your content, start to
+        finish.
       </Reveal>
       <Reveal as="p" className="about__statement about__statement--faint" y={20}>
-        Bold &amp; long-lasting.
+        Made to perform, not just to look nice.
       </Reveal>
     </section>
   );
