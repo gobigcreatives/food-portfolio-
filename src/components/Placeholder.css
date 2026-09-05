@@ -1,0 +1,17 @@
+/* Duotone gradient stand-in for real imagery. The --tone drives the hue;
+   a soft diagonal sheen keeps tiles from reading as flat blocks. */
+.placeholder {
+  width: 100%;
+  background-color: var(--tone, #2a2a2a);
+  background-image: radial-gradient(
+      120% 120% at 20% 15%,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0) 55%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(0, 0, 0, 0.25) 90%
+    );
+  position: relative;
+}

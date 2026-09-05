@@ -1,0 +1,119 @@
+/* ============================================================
+   Global styles — Cipher replica
+   Font note: the original uses the licensed ABC Favorit typeface.
+   We substitute a close, freely-available grotesque stack so the
+   layout matches without redistributing a commercial font file.
+   Drop a licensed ABCFavoritVariable.woff2 into /public/fonts and
+   uncomment the @font-face below to use the real face.
+   ============================================================ */
+
+/*
+@font-face {
+  font-display: swap;
+  font-family: "Favorit";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("/fonts/ABCFavoritVariable.woff2") format("woff2-variations");
+}
+*/
+
+:root {
+  --color-dark: #060403;
+  --color-light: #e9eae4;
+  --fontXXS: 8px;
+  --fontXS: 10px;
+  --fontS: 12px;
+  --fontM: 24px;
+
+  --font-sans: "Favorit", "Helvetica Neue", "Inter", Arial, sans-serif;
+  --font-serif: "Times New Roman", "Georgia", serif;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body,
+html {
+  overscroll-behavior: none;
+}
+
+body {
+  background: #000;
+  color: var(--color-light);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  background-color: #000;
+  height: 0;
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 0;
+  height: 10px;
+  width: 0;
+}
+
+::selection {
+  background-color: #676767;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+/* Uppercase mono-ish labels used throughout the UI */
+.label {
+  font-size: var(--fontS);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.label--xs {
+  font-size: var(--fontXS);
+}
