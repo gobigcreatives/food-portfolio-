@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { heroTiles } from "../data/works";
+import { useNavigate } from "react-router-dom";
+import { heroTiles, slugify } from "../data/works";
 import Media from "./Media";
 import { scrambleTo } from "../utils/scramble";
 import "./Hero.css";
@@ -17,6 +18,7 @@ export default function Hero() {
 
   const [active, setActive] = useState(null);
   const [index, setIndex] = useState("010");
+  const navigate = useNavigate();
 
   // Track cursor for parallax (via ref, so it doesn't re-render every move).
   useEffect(() => {
@@ -99,6 +101,7 @@ export default function Hero() {
               }}
               onMouseEnter={() => onEnter(tile, i)}
               onMouseLeave={onLeave}
+              onClick={() => navigate(`/work/${slugify(tile.title)}`)}
             >
               <Media item={{ video: tile.video, tone: tile.tone, w: tile.w_, h: tile.h_ }} />
             </figure>

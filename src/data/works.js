@@ -89,6 +89,53 @@ export const works = [
   },
 ];
 
+// A URL-friendly slug for a project title, e.g. "The Kitchen" -> "the-kitchen".
+export function slugify(title) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+// Per-project metadata (shown on the dedicated project page).
+export const projectMeta = {
+  "the-kitchen": {
+    description:
+      "A cinematic food & ambience series for The Kitchen — reels that turn dishes and dining moments into crave-worthy motion.",
+  },
+  pinnova: {
+    description:
+      "Scroll-stopping social content for Pinnova — pinner reels, food b-rolls and a carousel built to make the brand impossible to ignore.",
+  },
+  utsav: {
+    description:
+      "Fast-cut, high-energy reels for Utsav — celebratory food storytelling crafted to travel across feeds.",
+  },
+};
+
+// Group the flat `works` list into projects (one dedicated page each),
+// preserving grid order. Each project gets a slug, its clips, and meta.
+export const projects = works.reduce((acc, item) => {
+  const slug = slugify(item.title);
+  let project = acc.find((p) => p.slug === slug);
+  if (!project) {
+    project = {
+      slug,
+      title: item.title,
+      description: projectMeta[slug]?.description || "",
+      clips: [],
+    };
+    acc.push(project);
+  }
+  project.clips.push(item);
+  return acc;
+}, []);
+
+export function getProject(slug) {
+  return projects.find((p) => p.slug === slug);
+}
+
 // The two large blocks in the About section. Add `video` or `image` to show
 // real media (see Media.jsx); otherwise a neutral placeholder is shown.
 // Example: { video: "/about/reel-1.mp4", poster: "/about/reel-1.jpg", w: 1, h: 1 }

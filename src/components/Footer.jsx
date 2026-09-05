@@ -18,7 +18,7 @@ export default function Footer() {
           <span className="label label--xs">Bigger · Braver</span>
           <span className="label label--xs">Bolder</span>
         </div>
-        <div className="footer__col" id="talents">
+        <div className="footer__col">
           <span className="label label--xs">Work With Us</span>
           <a className="label label--xs" href="mailto:info@gobigcreatives.com">
             info@gobigcreatives.com

@@ -1,4 +1,5 @@
-import { works } from "../data/works";
+import { Link } from "react-router-dom";
+import { works, slugify } from "../data/works";
 import Media from "./Media";
 import Reveal from "./Reveal";
 import "./Works.css";
@@ -34,9 +35,9 @@ export default function Works() {
           const place = layout[work.id] || { col: "2 / 6", mt: 0 };
           return (
             <Reveal
-              as="a"
+              as={Link}
               key={work.id}
-              href="#works"
+              to={`/work/${slugify(work.title)}`}
               className="work"
               style={{
                 gridColumn: place.col,

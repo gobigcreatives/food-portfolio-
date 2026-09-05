@@ -1,0 +1,106 @@
+.project {
+  background: var(--color-light);
+  color: var(--color-dark);
+  min-height: 100vh;
+  padding: 140px 32px 120px;
+}
+
+.project--missing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.project__head {
+  max-width: 900px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+
+.project__back {
+  display: inline-block;
+  color: var(--brand-blue);
+  opacity: 0.7;
+  transition: opacity 0.3s var(--ease);
+  margin-bottom: 32px;
+}
+.project__back:hover {
+  opacity: 1;
+}
+
+.project__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--brand-blue);
+  font-size: clamp(40px, 8vw, 108px);
+}
+
+.project__desc {
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height: 1.5;
+  max-width: 620px;
+  margin: 22px auto 0;
+  color: var(--brand-blue);
+  opacity: 0.85;
+}
+
+.project__count {
+  display: inline-block;
+  margin-top: 24px;
+  opacity: 0.55;
+}
+
+/* clip layout — vertical reels sit in a responsive row, wide ones span full */
+.project__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project__item.is-wide {
+  grid-column: 1 / -1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.project__media {
+  overflow: hidden;
+  background: #060d1f;
+}
+
+.project__media .media {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project__caption {
+  display: block;
+  margin-top: 12px;
+  opacity: 0.6;
+}
+
+@media (max-width: 860px) {
+  .project {
+    padding: 110px 18px 80px;
+  }
+  .project__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 540px) {
+  .project__grid {
+    grid-template-columns: 1fr;
+  }
+}
