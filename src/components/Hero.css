@@ -151,6 +151,11 @@
 }
 
 @media (max-width: 720px) {
+  /* lift the whole collage (and centre mark) higher on the screen */
+  .hero__stage {
+    transform: translateY(-11%);
+  }
+
   /* stack the bottom bar: contact on the left, WORK on the right,
      hide the centre caption so nothing overlaps */
   .hero__footer {
