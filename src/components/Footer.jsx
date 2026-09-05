@@ -1,38 +1,35 @@
+import Logo from "./Logo";
 import "./Footer.css";
 
 export default function Footer() {
   return (
     <footer className="footer" id="contact">
       <div className="footer__lockup">
-        <span className="footer__brand">
-          CIPHER
-          <sup className="footer__brand-sup">© PROD</sup>
-        </span>
+        <Logo variant="stacked" className="footer__logo" />
         <span className="footer__tagline">
-          <span className="footer__tagline-for">FOR</span>
-          <em>CULTURE</em>
+          <span className="footer__tagline-for">THINK</span>
+          <em>BIGGER</em>
           <span className="footer__tagline-and">
-            AND
+            BRAVER
             <br />
-            ITS
+            BOLDER
           </span>
-          COUNTER
         </span>
       </div>
 
       <div className="footer__cols">
         <div className="footer__col">
-          <span className="label label--xs">7 Impasse Franchemont</span>
-          <span className="label label--xs">Paris&nbsp;&nbsp;&nbsp;11</span>
+          <span className="label label--xs">goBIG Creatives</span>
+          <span className="label label--xs">Brand &amp; Design Studio</span>
         </div>
         <div className="footer__col">
-          <span className="label label--xs">For Culture</span>
-          <span className="label label--xs">And Its Counter</span>
+          <span className="label label--xs">Bigger · Braver</span>
+          <span className="label label--xs">Bolder</span>
         </div>
         <div className="footer__col" id="talents">
           <span className="label label--xs">Work With Us</span>
-          <a className="label label--xs" href="mailto:prod@cipher.tv">
-            prod@cipher.tv
+          <a className="label label--xs" href="mailto:hello@gobigcreatives.com">
+            hello@gobigcreatives.com
           </a>
         </div>
         <div className="footer__col footer__col--right">

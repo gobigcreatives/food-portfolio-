@@ -1,0 +1,65 @@
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 0.9;
+  color: currentColor;
+  user-select: none;
+}
+
+.logo__mark {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: -0.04em;
+}
+
+.logo__go {
+  font-weight: 800;
+  text-transform: lowercase;
+}
+
+.logo__big {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.logo__creatives {
+  font-weight: 700;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+
+/* ---- horizontal (header) ---- */
+.logo--horizontal .logo__mark {
+  font-size: 28px;
+}
+.logo--horizontal .logo__creatives {
+  font-size: 8.5px;
+  letter-spacing: 0.32em;
+  margin-top: 2px;
+  margin-right: 1px;
+}
+
+/* ---- stacked (hero / footer big lockup) ---- */
+.logo--stacked {
+  align-items: center;
+  line-height: 0.82;
+}
+.logo--stacked .logo__mark {
+  flex-direction: column;
+  align-items: center;
+}
+.logo--stacked .logo__go {
+  font-size: 0.42em;
+  align-self: flex-start;
+  margin-left: 0.15em;
+}
+.logo--stacked .logo__big {
+  font-size: 1em;
+}
+.logo--stacked .logo__creatives {
+  align-self: center;
+  font-size: 0.14em;
+  letter-spacing: 0.4em;
+  margin-top: 0.1em;
+  margin-right: -0.3em;
+}

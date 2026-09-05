@@ -1,32 +1,41 @@
 /* ============================================================
-   Global styles — Cipher replica
-   Font note: the original uses the licensed ABC Favorit typeface.
-   We substitute a close, freely-available grotesque stack so the
-   layout matches without redistributing a commercial font file.
-   Drop a licensed ABCFavoritVariable.woff2 into /public/fonts and
-   uncomment the @font-face below to use the real face.
+   goBIG Creatives — brand-applied global styles
+   Layout adapted from the Cipher landing structure; visual
+   identity per the goBIG Creatives Brand Guidelines:
+   typeface Montserrat, Prussian Blue primary, orange + navy
+   secondaries, white/black naturals.
    ============================================================ */
 
-/*
-@font-face {
-  font-display: swap;
-  font-family: "Favorit";
-  font-style: normal;
-  font-weight: 100 900;
-  src: url("/fonts/ABCFavoritVariable.woff2") format("woff2-variations");
-}
-*/
+@import "@fontsource/montserrat/300.css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/800.css";
+@import "@fontsource/montserrat/900.css";
 
 :root {
-  --color-dark: #060403;
-  --color-light: #e9eae4;
+  /* Brand palette (Brand Guidelines §Colors) */
+  --brand-blue: #09235b; /* Prussian Blue — primary */
+  --brand-navy: #5c79b1; /* Dusty Navy — secondary */
+  --brand-orange: #b76926; /* burnt orange — secondary accent */
+  --brand-white: #ffffff;
+  --brand-black: #000000;
+  --brand-cream: #f4f5f7; /* soft white for light sections */
+
+  /* Semantic tokens */
+  --color-dark: var(--brand-blue);
+  --color-light: var(--brand-cream);
+  --color-accent: var(--brand-orange);
+
   --fontXXS: 8px;
   --fontXS: 10px;
   --fontS: 12px;
   --fontM: 24px;
 
-  --font-sans: "Favorit", "Helvetica Neue", "Inter", Arial, sans-serif;
-  --font-serif: "Times New Roman", "Georgia", serif;
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  /* Display face reuses Montserrat to stay on-brand (single typeface). */
+  --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -70,7 +79,7 @@ html {
 }
 
 body {
-  background: #000;
+  background: var(--brand-blue);
   color: var(--color-light);
   font-family: var(--font-sans);
   font-weight: 400;
@@ -88,30 +97,29 @@ a {
 }
 
 ::-webkit-scrollbar {
-  background-color: #000;
+  background-color: var(--brand-blue);
   height: 0;
   width: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #000;
+  background-color: var(--brand-blue);
   border-radius: 0;
   height: 10px;
   width: 0;
 }
 
 ::selection {
-  background-color: #676767;
+  background-color: var(--brand-orange);
   color: #fff;
-  mix-blend-mode: difference;
 }
 
-/* Uppercase mono-ish labels used throughout the UI */
+/* Uppercase label used throughout the UI */
 .label {
   font-size: var(--fontS);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .label--xs {

@@ -1,19 +1,36 @@
-# cīphər — React/Vite replica
+# goBIG Creatives — studio site
 
-A pixel-close front-end recreation of the [cipher.tv](https://cipher.tv/)
-landing experience, built with React + Vite.
+A React + Vite marketing site for **goBIG Creatives**, built on an immersive
+editorial layout (adapted from the cipher.tv structure) and dressed in the
+goBIG Creatives brand identity from the Brand Guidelines.
 
-## What's here
+## Brand application
 
-- **Hero** — the scattered diagonal image collage with cursor parallax, a
-  pulsing central oval mark, and the `006 / THE ULTIMATE SHIELD / JOUR` footer bar.
-- **Works** — the scattered editorial grid of 12 projects with hover zoom and
-  index/title metadata.
-- **About** — the concentric marquee title stack, twin video blocks, the serif
-  headline and the studio statement.
-- **Footer** — the large `CIPHER © PROD — FOR CULTURE AND ITS COUNTER` lockup
-  and the four-column contact/address block.
-- **Smooth scroll** — inertial scrolling via [Lenis](https://github.com/darkroomengineering/lenis).
+Per the goBIG Creatives Brand Guidelines:
+
+- **Typeface** — Montserrat (self-hosted via `@fontsource/montserrat`, weights
+  300–900). Headlines use the heavy weights; body/labels use 500–700.
+- **Colours** (`src/index.css`)
+  - Prussian Blue `#09235b` — primary (hero + footer grounds, headlines)
+  - Dusty Navy `#5c79b1` — secondary
+  - Burnt Orange `#b76926` — accent (selection, hovers)
+  - White `#ffffff` / soft white `#f4f5f7` — light sections
+- **Logo** — the `goBIG Creatives` wordmark is rebuilt from the brand typeface
+  in `src/components/Logo.jsx` (`horizontal` for the header, `stacked` for the
+  footer lockup — matching the reverse-colour logo on Prussian Blue).
+
+## Sections
+
+- **Hero** — scattered image collage with cursor parallax on the Prussian-Blue
+  ground, a pulsing oval mark, and the `006 / BIGGER · BRAVER · BOLDER / WORK`
+  footer bar.
+- **Works** — scattered editorial grid of 12 portfolio tiles with hover zoom.
+- **About** — concentric marquee title stack (goBIG brand lines), twin video
+  blocks, the `THINK BIGGER, BRAVER, AND BOLDER.` headline and studio statement.
+- **Footer** — the large `goBIG CREATIVES` lockup with the `THINK BIGGER braver
+  bolder` tagline and the four-column contact block.
+- **Smooth scroll** via [Lenis](https://github.com/darkroomengineering/lenis);
+  the header adapts (white over dark grounds, blue over light).
 
 ## Running
 
@@ -24,27 +41,20 @@ npm run build    # production build to /dist
 npm run preview  # preview the build
 ```
 
-## Assets & fonts (important)
+## Imagery
 
-To keep the repo free of third-party licensed material, two things are
-substituted and wired for easy replacement:
-
-- **Typography** — the original uses the licensed *ABC Favorit* typeface. This
-  project falls back to a close grotesque stack. Drop a licensed
-  `ABCFavoritVariable.woff2` into `public/fonts/` and uncomment the
-  `@font-face` block at the top of `src/index.css` to use the real face.
-- **Imagery** — Cipher's photography is replaced by neutral duotone
-  placeholders (`src/components/Placeholder.jsx`). Swap those for
-  `<img src="/works/…" />` once you have licensed assets; per-tile tone and
-  aspect ratios live in `src/data/works.js`.
+Neutral duotone placeholders (`src/components/Placeholder.jsx`) stand in for
+real work imagery so the repo carries no third-party photography. Swap them for
+`<img src="/works/…" />` once you have assets; per-tile tone and aspect ratios
+live in `src/data/works.js`.
 
 ## Structure
 
 ```
 src/
-  components/   Header, Hero, Works, About, Footer, Placeholder (+ CSS)
-  data/         works.js — project list and hero collage layout
+  components/   Header, Hero, Works, About, Footer, Logo, Placeholder (+ CSS)
+  data/         works.js — portfolio list and hero collage layout
   hooks/        useLenis.js — smooth-scroll driver
-  index.css     design tokens, resets, global type
+  index.css     brand tokens, resets, Montserrat imports, global type
   App.jsx       composition
 ```

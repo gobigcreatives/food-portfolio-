@@ -2,15 +2,15 @@ import Placeholder from "./Placeholder";
 import "./About.css";
 
 const stackTop = [
-  "Classics Creators Club",
-  "Cautious Curators Collective",
-  "Creative Crafters Constellation",
-  "Counterculture Creating Culture",
+  "Bold Brands Built Big",
+  "Bigger Braver Bolder Always",
+  "Design Content Social Results",
+  "Creativity Meets Real Impact",
 ];
 
 export default function About() {
   return (
-    <section className="about" id="about">
+    <section className="about" id="about" data-header="light">
       {/* Concentric title stack that mirrors then repeats CIPHER */}
       <div className="about__stack">
         {stackTop.map((line) => (
@@ -22,7 +22,7 @@ export default function About() {
         <div className="about__stack-cipher">
           {Array.from({ length: 7 }).map((_, i) => (
             <p key={i} className="about__stack-line about__stack-line--cipher">
-              Cipher
+              goBIG
             </p>
           ))}
           <span className="about__copyright about__copyright--left" aria-hidden>
@@ -50,18 +50,18 @@ export default function About() {
       </div>
 
       <h2 className="about__headline">
-        Creators, capable crafters,
+        Think bigger, braver,
         <br />
-        and cautious curators.
+        and bolder.
       </h2>
 
       <p className="about__statement">
-        We build, bend, break, and rebuild — crafting classics while exploring
-        what comes next. Cipher is a creative production company working between
-        the established and the experimental.
+        We dive deep into who you are and what makes your business unique, then
+        bring it all to life. goBIG Creatives shapes the future of brands —
+        combining design, content, and social with a focus on real results.
       </p>
       <p className="about__statement about__statement--faint">
-        And the experimental.
+        Bold &amp; long-lasting.
       </p>
     </section>
   );

@@ -61,9 +61,9 @@ export default function Hero() {
 
       <div className="hero__footer">
         <span className="label label--xs">006</span>
-        <span className="label">The Ultimate Shield</span>
-        <a href="#about" className="hero__jour" aria-label="Jour">
-          <span className="hero__jour-word">JOUR</span>
+        <span className="label">Bigger · Braver · Bolder</span>
+        <a href="#works" className="hero__jour" aria-label="View works">
+          <span className="hero__jour-word">WORK</span>
           <span className="hero__jour-arrow">↗</span>
         </a>
       </div>

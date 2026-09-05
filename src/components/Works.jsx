@@ -21,10 +21,10 @@ const layout = {
 
 export default function Works() {
   return (
-    <section className="works" id="works">
+    <section className="works" id="works" data-header="light">
       <p className="works__tagline">
-        It&rsquo;s subtle yet striking, meaning shaped in quiet,
-        intentional&nbsp;forms.
+        We help brands goBIG&nbsp;&mdash; bold, unforgettable, and built to
+        make a long-lasting&nbsp;impression.
       </p>
 
       <div className="works__grid">
