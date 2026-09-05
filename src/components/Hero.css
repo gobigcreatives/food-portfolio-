@@ -151,12 +151,6 @@
 }
 
 @media (max-width: 720px) {
-  /* enlarge the collage so it fills the small screen better */
-  .hero__stage {
-    transform: scale(1.35);
-    transform-origin: 50% 46%;
-  }
-
   /* stack the bottom bar: contact on the left, WORK on the right,
      hide the centre caption so nothing overlaps */
   .hero__footer {

@@ -17,6 +17,16 @@ export default function Hero() {
   const cancelRef = useRef(null);
 
   const [active, setActive] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Track viewport so we can tighten + enlarge the cluster on small screens.
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 720px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   // Track cursor for parallax (via ref, so it doesn't re-render every move).
   useEffect(() => {
@@ -85,15 +95,25 @@ export default function Hero() {
           ref={clusterRef}
           className={`hero__cluster ${active !== null ? "has-active" : ""}`}
         >
-          {heroTiles.map((tile, i) => (
+          {heroTiles.map((tile, i) => {
+            // On mobile, pull tiles toward the centre and enlarge them so the
+            // cluster reads as one dense, clearly-rotating collage (like cipher).
+            const cx = 50;
+            const cy = 50;
+            const comp = 0.66; // compress positions toward centre
+            const wmul = 1.95; // enlarge tiles
+            const x = isMobile ? cx + (tile.x - cx) * comp : tile.x;
+            const y = isMobile ? cy + (tile.y - cy) * comp : tile.y;
+            const w = isMobile ? tile.w * wmul : tile.w;
+            return (
             <figure
               key={(tile.video || tile.id) + i}
               ref={(el) => (tileRefs.current[i] = el)}
               className={`hero__tile ${active === i ? "is-active" : ""}`}
               style={{
-                left: `${tile.x}%`,
-                top: `${tile.y}%`,
-                width: `${tile.w}%`,
+                left: `${x}%`,
+                top: `${y}%`,
+                width: `${w}%`,
                 zIndex: active === i ? 50 : tile.z,
               }}
               onMouseEnter={() => onEnter(tile, i)}
@@ -101,7 +121,8 @@ export default function Hero() {
             >
               <Media item={{ video: tile.video, tone: tile.tone, w: tile.w_, h: tile.h_ }} />
             </figure>
-          ))}
+            );
+          })}
         </div>
 
         {/* Central pulsing oval mark (stays fixed while clips orbit it) */}
