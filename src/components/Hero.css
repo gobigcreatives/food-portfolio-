@@ -46,10 +46,10 @@
   filter: grayscale(1) brightness(0.6);
 }
 
-/* the hovered tile stays in colour and grows 30% */
+/* the hovered tile stays in colour and grows to 2x */
 .hero__cluster.has-active .hero__tile.is-active .media {
   filter: none;
-  transform: scale(1.3);
+  transform: scale(2);
 }
 
 .hero__tile.is-active {
