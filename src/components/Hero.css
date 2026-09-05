@@ -115,11 +115,22 @@
   color: var(--color-light);
 }
 
-.hero__footer > .label--xs {
+.hero__contact {
   justify-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--color-light);
+  transition: opacity 0.3s var(--ease);
+}
+.hero__contact:hover {
+  opacity: 0.6;
+}
+.hero__contact-email {
+  opacity: 0.7;
 }
 
-.hero__footer > .label:nth-child(2) {
+.hero__footer > .hero__caption {
   justify-self: center;
 }
 

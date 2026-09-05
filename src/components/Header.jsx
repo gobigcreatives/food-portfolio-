@@ -12,13 +12,6 @@ export default function Header() {
     setOnLight(location.pathname !== "/");
   }, [location.pathname]);
 
-  // Scroll to the footer / contact block on the current page.
-  function goToContact(e) {
-    e.preventDefault();
-    const el = document.getElementById("contact");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }
-
   return (
     <header className={`site-header ${onLight ? "is-light" : ""}`}>
       <Link to="/" className="site-header__logo" aria-label="goBIG Creatives home">
@@ -32,7 +25,7 @@ export default function Header() {
       </nav>
 
       <nav className="site-header__right">
-        <a href="#contact" className="label" onClick={goToContact}>
+        <a href="mailto:info@gobigcreatives.com" className="label">
           Contact
         </a>
         <Link to="/about" className="label">

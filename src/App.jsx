@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useLenis } from "./hooks/useLenis";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Landing from "./pages/Landing";
 import WorksPage from "./pages/WorksPage";
 import AboutPage from "./pages/AboutPage";
@@ -19,7 +18,6 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/work/:slug" element={<ProjectPage />} />
       </Routes>
-      <Footer />
     </>
   );
 }

@@ -17,7 +17,6 @@ export default function Hero() {
   const cancelRef = useRef(null);
 
   const [active, setActive] = useState(null);
-  const [index, setIndex] = useState("010");
 
   // Track cursor for parallax (via ref, so it doesn't re-render every move).
   useEffect(() => {
@@ -70,7 +69,6 @@ export default function Hero() {
   function onEnter(tile, i) {
     pausedRef.current = true;
     setActive(i);
-    setIndex(tile.id);
     setCaption(tile.title);
   }
 
@@ -115,7 +113,12 @@ export default function Hero() {
       </div>
 
       <div className="hero__footer">
-        <span className="label label--xs">{index}</span>
+        <a className="hero__contact" href="mailto:info@gobigcreatives.com">
+          <span className="label label--xs">Work With Us</span>
+          <span className="label label--xs hero__contact-email">
+            info@gobigcreatives.com
+          </span>
+        </a>
         <span className="label hero__caption" ref={captionRef}>
           {DEFAULT_LABEL.toUpperCase()}
         </span>
