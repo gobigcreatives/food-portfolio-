@@ -1,6 +1,4 @@
-import Media from "./Media";
 import Reveal from "./Reveal";
-import { aboutVideos } from "../data/works";
 import "./About.css";
 
 const stackTop = [
@@ -45,15 +43,6 @@ export default function About() {
           >
             {line}
           </p>
-        ))}
-      </div>
-
-      {/* twin video blocks */}
-      <div className="about__videos">
-        {aboutVideos.map((v, i) => (
-          <Reveal key={i} delay={i * 120} y={30} className="about__video-wrap">
-            <Media item={v} className="about__video" />
-          </Reveal>
         ))}
       </div>
 
