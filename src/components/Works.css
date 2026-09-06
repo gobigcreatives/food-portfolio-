@@ -15,16 +15,26 @@
   letter-spacing: 0.01em;
 }
 
+/* staggered masonry: fixed columns, each offset for a scattered/random feel */
 .works__grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
-  max-width: 1400px;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.works__col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .work {
   display: block;
+  width: 100%;
   color: var(--color-dark);
 }
 
@@ -72,16 +82,11 @@
   .works__tagline {
     margin: 40px auto 56px;
   }
-  /* clean, even two-column grid (no scattered offsets) */
   .works__grid {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 12px;
-    row-gap: 28px;
-    align-items: start;
+    gap: 12px;
   }
-  .work {
-    grid-column: auto !important;
-    margin-top: 0 !important;
+  .works__col {
+    gap: 12px;
   }
 }
 
@@ -91,8 +96,10 @@
     padding: 84px 12px 72px;
   }
   .works__grid {
-    column-gap: 10px;
-    row-gap: 18px;
+    gap: 10px;
+  }
+  .works__col {
+    gap: 10px;
   }
   .work__meta {
     margin-top: 8px;
