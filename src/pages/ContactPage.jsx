@@ -65,10 +65,10 @@ export default function ContactPage() {
             </button>
           </div>
         </section>
-      </div>
 
-      <div className="contact__bigword" aria-hidden="true">
-        CONTACT
+        <div className="contact__bigword" aria-hidden="true">
+          CONTACT
+        </div>
       </div>
     </main>
   );

@@ -11,11 +11,24 @@
 .contact__grid {
   display: grid;
   grid-template-columns: minmax(240px, 1fr) 1.7fr;
-  gap: clamp(32px, 6vw, 96px);
+  grid-template-areas:
+    "aside form"
+    "bigword bigword";
+  column-gap: clamp(32px, 6vw, 96px);
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   flex: 1;
+}
+
+.contact__aside {
+  grid-area: aside;
+}
+.contact__form {
+  grid-area: form;
+}
+.contact__bigword {
+  grid-area: bigword;
 }
 
 /* ---- left column ---- */
@@ -169,35 +182,49 @@
   line-height: 0.85;
   color: var(--brand-blue);
   /* sized to span the width without clipping (7 letters) */
-  font-size: 19vw;
+  font-size: 18vw;
   white-space: nowrap;
   text-align: center;
   margin-top: 24px;
 }
 
+/* let grid tracks shrink so the nowrap word can't force horizontal overflow */
+.contact__grid > * {
+  min-width: 0;
+}
+
 @media (max-width: 860px) {
   .contact {
-    padding: 96px 18px 0;
+    padding: 84px 18px 0;
   }
+  /* stack so the message + CONTACT word are visible first, details below */
   .contact__grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-areas:
+      "form"
+      "bigword"
+      "aside";
+    row-gap: 8px;
+  }
+  .contact__hi {
+    font-size: clamp(24px, 6vw, 34px);
+  }
+  .contact__textarea {
+    font-size: clamp(18px, 4.6vw, 26px);
+  }
+  .contact__actions {
+    padding-top: 20px;
+    padding-bottom: 18px;
+  }
+  .contact__bigword {
+    font-size: 16.5vw;
+    text-align: center;
+    margin-top: 12px;
   }
   .contact__aside {
-    order: 2;
-  }
-  .contact__form {
-    order: 1;
+    margin-top: 36px;
   }
   .contact__rule--bottom {
     margin-top: 28px;
-  }
-  .contact__actions {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .contact__bigword {
-    font-size: 19vw;
-    text-align: center;
   }
 }
