@@ -43,11 +43,6 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="contact__block contact__block--muted">
-            <p>Restaurants . Cafes</p>
-            <p>Food brands . Chefs</p>
-          </div>
-
           <span className="contact__rule contact__rule--bottom" />
           <p className="contact__copy">© {new Date().getFullYear()}</p>
         </aside>
