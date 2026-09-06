@@ -146,6 +146,12 @@ export default function Hero() {
         </div>
       </div>
 
+      <p className="hero__statement">
+        Food content
+        <br />
+        impossible to ignore.
+      </p>
+
       <div className="hero__footer">
         <a className="hero__contact" href="mailto:info@gobigcreatives.com">
           <span className="label label--xs">Work With Us</span>
