@@ -30,15 +30,16 @@ export default function ContactPage() {
           <span className="contact__rule" />
 
           <div className="contact__block">
-            <p>goBIG Creatives</p>
-            <p>Food videography &amp; photography</p>
+            <p>167&ndash;169 Great Portland Street</p>
+            <p>5th Floor . London . W1W 5PF</p>
           </div>
 
           <div className="contact__block">
-            <p>work with us</p>
             <p>
-              mail .{" "}
-              <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+              phone . <a href="tel:+447721875437">+44 7721 875437</a>
+            </p>
+            <p>
+              mail . <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </p>
           </div>
 
