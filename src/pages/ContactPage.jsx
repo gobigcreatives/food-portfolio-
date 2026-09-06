@@ -6,14 +6,12 @@ const EMAIL = "info@gobigcreatives.com";
 
 export default function ContactPage() {
   const [message, setMessage] = useState("");
-  const [accepted, setAccepted] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   function sendEmail() {
-    if (!accepted) return;
     const subject = encodeURIComponent("New enquiry — goBIG Creatives");
     const body = encodeURIComponent(message || "");
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
@@ -62,22 +60,7 @@ export default function ContactPage() {
           </label>
 
           <div className="contact__actions">
-            <button
-              type="button"
-              className={`contact__accept ${accepted ? "is-on" : ""}`}
-              onClick={() => setAccepted((v) => !v)}
-              aria-pressed={accepted}
-            >
-              <span className="contact__dot" />
-              Accept privacy
-            </button>
-
-            <button
-              type="button"
-              className="contact__send"
-              onClick={sendEmail}
-              disabled={!accepted}
-            >
+            <button type="button" className="contact__send" onClick={sendEmail}>
               Send email
             </button>
           </div>
