@@ -103,18 +103,20 @@
   }
 }
 
-/* editorial statement overlaid on the hero (top-right on desktop) */
+/* editorial statement overlaid on the hero (top-right on desktop) —
+   matches the small uppercase label style used across the UI */
 .hero__statement {
   position: absolute;
   z-index: 30;
-  top: 24%;
+  top: 26%;
   right: 5vw;
   color: var(--brand-white);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(15px, 1.5vw, 22px);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(11px, 0.95vw, 13px);
+  line-height: 1.7;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   text-align: right;
 }
 
@@ -190,13 +192,13 @@
   .hero__jour {
     font-size: 16px;
   }
-  /* sit in the gap between the video ring and the Work With Us bar */
+  /* centred, in the gap between the video ring and the Work With Us bar */
   .hero__statement {
     top: auto;
-    right: auto;
-    left: 16px;
-    bottom: 84px;
-    text-align: left;
-    font-size: 17px;
+    left: 0;
+    right: 0;
+    bottom: 92px;
+    text-align: center;
+    font-size: 11px;
   }
 }
